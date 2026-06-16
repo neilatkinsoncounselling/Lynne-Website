@@ -1,147 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="The Listening Space Counselling offers a calm, confidential space to be heard, understood and supported.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Listening Space Counselling</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <meta name="description" content="The Listening Space Counselling offers a calm, confidential space to pause, be heard and begin to make sense of what you are carrying." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header" aria-label="Site header">
-    <div class="container header-inner">
+  <header class="site-header" aria-label="Main header">
+    <div class="header-inner">
       <a class="brand" href="index.html" aria-label="The Listening Space Counselling home">
-        <img src="assets/leaf-mark.svg" alt="" class="brand-mark">
-        <span class="brand-text">
-          <span class="brand-kicker">The</span>
-          <span class="brand-name">Listening Space</span>
-          <span class="brand-subtitle">Counselling</span>
-        </span>
+        <img src="assets/logo.jpeg" alt="The Listening Space Counselling logo" />
       </a>
 
-      <nav class="main-nav" aria-label="Main navigation">
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="main-nav" id="main-navigation" aria-label="Main navigation">
+        <a class="active" href="index.html">Home</a>
         <a href="#about">About</a>
-        <a href="#support">Support</a>
-        <a href="#sessions">Sessions</a>
+        <a href="#help">How I Can Help</a>
+        <a href="#first-session">First Session</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main id="main-content">
-    <section class="hero section-pad">
-      <div class="container hero-grid">
-        <div class="hero-copy reveal-card">
-          <p class="eyebrow">Counselling with warmth and care</p>
-          <h1>A calm space to pause, be heard and begin to make sense of things.</h1>
-          <p class="hero-intro">The Listening Space offers a confidential counselling space for anxiety, grief, relationships, work stress and those harder moments when life feels difficult to untangle.</p>
-          <div class="hero-actions" aria-label="Main calls to action">
-            <a class="button button-primary" href="#contact">Start an enquiry</a>
-            <a class="button button-secondary" href="#sessions">View sessions</a>
-          </div>
+  <main id="main">
+    <section class="hero section-shell" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <h1 id="hero-title">A calm space to pause, be heard and begin to make sense of what you are carrying.</h1>
+        <img class="divider-image" src="assets/divider-botanical.png" alt="" aria-hidden="true" />
+        <p class="hero-text">Counselling offers a warm, confidential space to slow down, talk openly and feel listened to without judgement.</p>
+        <div class="button-row" aria-label="Primary actions">
+          <a class="button button-primary" href="#contact">Get in touch</a>
+          <a class="button button-secondary" href="#how-it-works">How counselling works</a>
         </div>
-
-        <aside class="hero-panel" aria-label="Introductory note">
-          <img src="assets/leaf-mark.svg" alt="" class="panel-mark">
-          <p class="quote">“A space to be heard. A space to heal.”</p>
-          <p>You do not need to arrive with the right words. We can start wherever you are.</p>
-        </aside>
       </div>
+
+      <figure class="hero-image">
+        <img src="assets/hero-chairs.png" alt="Two sage green counselling chairs with a small table between them" />
+      </figure>
     </section>
 
-    <section id="about" class="section-pad about-section">
-      <div class="container two-column">
+    <section class="cards section-shell" id="help" aria-label="Main website sections">
+      <article class="info-card">
+        <div class="icon-circle"><img src="assets/icon-leaf-circle.png" alt="" aria-hidden="true" /></div>
         <div>
-          <p class="eyebrow">About the space</p>
-          <h2>Gentle support when you need room to think and feel.</h2>
+          <h2>Where are you today?</h2>
+          <p>Life can feel heavy at times. You do not have to face it alone. Take the first step at your own pace.</p>
+          <a class="text-link" href="#where">Learn more <span aria-hidden="true">→</span></a>
         </div>
-        <div class="soft-card">
-          <p>Counselling can give you time away from the usual pressures and expectations. It can be a place to talk honestly, notice patterns, explore feelings and find a little more choice in how you respond.</p>
-          <p>The work is collaborative, respectful and paced carefully. Some people come with a clear issue. Others come because something feels heavy, confusing or stuck.</p>
-        </div>
-      </div>
-    </section>
+      </article>
 
-    <section id="support" class="section-pad support-section">
-      <div class="container">
-        <div class="section-heading centred">
-          <p class="eyebrow">What counselling may help with</p>
-          <h2>Support for the things that are difficult to carry alone.</h2>
-        </div>
-
-        <div class="support-grid">
-          <article class="support-card">
-            <span class="card-number">01</span>
-            <h3>Anxiety and overwhelm</h3>
-            <p>Making sense of worry, pressure, panic, overthinking and the feeling that your mind will not slow down.</p>
-          </article>
-
-          <article class="support-card">
-            <span class="card-number">02</span>
-            <h3>Grief and loss</h3>
-            <p>A steady space for bereavement, change, endings and the quieter losses that others may not fully see.</p>
-          </article>
-
-          <article class="support-card">
-            <span class="card-number">03</span>
-            <h3>Relationships and boundaries</h3>
-            <p>Exploring people pleasing, conflict, family patterns, communication and the cost of always holding things together.</p>
-          </article>
-
-          <article class="support-card">
-            <span class="card-number">04</span>
-            <h3>Feeling stuck</h3>
-            <p>When life looks functional from the outside but inside you feel tired, disconnected or unsure what needs to change.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="sessions" class="section-pad sessions-section">
-      <div class="container session-layout">
-        <div class="session-card large-card">
-          <p class="eyebrow">Sessions</p>
-          <h2>A simple, steady beginning.</h2>
-          <p>Initial contact is a chance to say what has brought you here and ask any questions about how counselling may work. From there, sessions can be arranged at a regular time that feels manageable.</p>
-          <ul class="clean-list">
-            <li>Confidential one to one counselling</li>
-            <li>Online or in person details can be added here</li>
-            <li>Session length, fees and availability can be confirmed here</li>
-          </ul>
-        </div>
-
-        <div class="small-note-card">
-          <h3>For now</h3>
-          <p>This starter page uses placeholder wording where final practice details, fees, location and professional registration information can be added later.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section-pad contact-section">
-      <div class="container contact-card">
+      <article class="info-card">
+        <div class="icon-circle"><img src="assets/icon-chair.png" alt="" aria-hidden="true" /></div>
         <div>
-          <p class="eyebrow">Get in touch</p>
-          <h2>Start with a short message.</h2>
-          <p>You can use this section for an email address, phone number or link to a secure enquiry form once the site is developed further.</p>
+          <h2>What counselling can offer</h2>
+          <p>Explore how counselling can support you to feel clearer, more connected and more like yourself again.</p>
+          <a class="text-link" href="#offer">Learn more <span aria-hidden="true">→</span></a>
         </div>
-        <div class="contact-actions">
-          <a class="button button-primary" href="mailto:hello@example.com">Email enquiry</a>
-          <p class="contact-small">Replace hello@example.com with the correct contact email before publishing.</p>
+      </article>
+
+      <article class="info-card" id="first-session">
+        <div class="icon-circle"><img src="assets/icon-calendar.png" alt="" aria-hidden="true" /></div>
+        <div>
+          <h2>Before you book</h2>
+          <p>Find out what to expect in our first session and how we can work together.</p>
+          <a class="text-link" href="#how-it-works">Learn more <span aria-hidden="true">→</span></a>
         </div>
+      </article>
+    </section>
+
+    <section class="welcome-band" id="about" aria-labelledby="welcome-title">
+      <div class="plant-wrap" aria-hidden="true">
+        <img src="assets/plant-illustration.png" alt="" class="plant-art" />
+      </div>
+
+      <div class="welcome-copy">
+        <img src="assets/icon-leaf-triad.png" alt="" aria-hidden="true" class="section-badge" />
+        <h2 id="welcome-title">A space to be heard. A space to heal.</h2>
+        <img class="divider-image compact" src="assets/divider-botanical.png" alt="" aria-hidden="true" />
+        <p>At The Listening Space Counselling, you are welcomed as you are. Together, we can create space for understanding, growth and change.</p>
+      </div>
+
+      <div class="contact-prompt" id="contact">
+        <img src="assets/icon-leaf-triad.png" alt="" aria-hidden="true" class="contact-badge" />
+        <p class="prompt-title">Ready to take the next step?</p>
+        <p>I would love to hear from you.</p>
+        <a class="button button-primary" href="mailto:hello@example.com">Get in touch</a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>&copy; <span id="year">2026</span> The Listening Space Counselling</p>
-      <p>Privacy notice, accessibility and professional information can be added here.</p>
-    </div>
+    <p>© The Listening Space Counselling</p>
+    <nav aria-label="Footer navigation">
+      <a href="#privacy">Privacy Policy</a>
+      <a href="#terms">Terms</a>
+    </nav>
   </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>

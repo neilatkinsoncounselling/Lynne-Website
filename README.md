@@ -1,13 +1,12 @@
-# The Listening Space Counselling front page
+The Listening Space Counselling website starter
 
-This is a starter front page using the first visual style from the supplied style concepts and font option 9 from the supplied font concepts.
+This package includes:
+- index.html
+- css/styles.css
+- js/main.js
+- assets/ folder with logo, hero image and all decorative icon assets
 
-## Structure
-
-- `index.html` contains the front page content and page sections.
-- `css/styles.css` contains all styling, colours, layout and responsive rules.
-- `assets/leaf-mark.svg` is a simple editable placeholder brand mark.
-
-## Before publishing
-
-Update the contact email, session details, fees, location, privacy notice, accessibility information and any professional registration wording.
+Notes:
+- Replace the placeholder email address in index.html if needed.
+- All images used on the page are stored in the assets folder.
+- Font pairing remains Spectral and DM Sans.
