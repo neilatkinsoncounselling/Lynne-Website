@@ -1,0 +1,10 @@
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">The Listening Space abstract leaf mark</title>
+  <desc id="desc">A soft circular counselling brand mark with two simple leaf shapes.</desc>
+  <circle cx="80" cy="80" r="73" fill="#ede4dc"/>
+  <circle cx="80" cy="80" r="61" stroke="#8a9e88" stroke-width="2" opacity="0.7"/>
+  <path d="M80 113C74 92 77 72 91 54C101 41 116 33 132 31C133 47 128 62 116 73C104 85 91 91 80 113Z" fill="#8a9e88" opacity="0.86"/>
+  <path d="M78 112C80 90 74 72 60 58C49 47 35 42 21 42C20 57 25 70 36 81C48 93 62 100 78 112Z" fill="#c4956a" opacity="0.72"/>
+  <path d="M80 118C83 91 94 70 122 43" stroke="#3d3530" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+  <path d="M78 118C75 93 62 75 33 52" stroke="#3d3530" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+</svg>
