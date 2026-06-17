@@ -58,3 +58,10 @@ Update v21:
   - Two chairs. Time to think.
   - A first conversation, nothing more.
   - A short message is enough.
+
+Update v22:
+- Applied the full wording review across the website.
+- Replaced remaining generic or slightly clichéd counselling phrases.
+- Removed "polished story" and used simpler wording around not needing to know where to begin.
+- Simplified the homepage, About, What It Is Like, First Session and Contact page copy.
+- Marked Privacy and Accessibility pages as draft structural pages.
