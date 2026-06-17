@@ -4,11 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Listening Space Counselling</title>
-  <meta name="description" content="The Listening Space Counselling gives you a quiet place to think out loud, talk honestly and work through what is going on at your own pace." />
+  <meta name="description" content="A quieter place to think out loud, talk honestly and work through what is going on at your own pace." />
+  <meta property="og:title" content="The Listening Space Counselling" />
+  <meta property="og:description" content="A quieter place to think out loud, talk honestly and work through what is going on at your own pace." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/images/hero-chairs-large.webp" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -16,7 +24,7 @@
   <header class="site-header" aria-label="Main header">
     <div class="header-inner">
       <a class="brand" href="index.html" aria-label="The Listening Space Counselling home">
-        <img src="assets/logo.webp" alt="The Listening Space Counselling logo" />
+        <img src="assets/logo/listening-space-logo.webp" alt="The Listening Space Counselling logo" width="420" height="300" />
       </a>
 
       <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-navigation">
@@ -27,10 +35,10 @@
 
       <nav class="main-nav" id="main-navigation" aria-label="Main navigation">
         <a class="active" href="index.html">Home</a>
-        <a href="#about-lynne">About</a>
-        <a href="#help">What It Is Like</a>
-        <a href="#first-session">First Session</a>
-        <a href="#contact">Contact</a>
+        <a href="about.html">About</a>
+        <a href="what-it-is-like.html">What It Is Like</a>
+        <a href="first-session.html">First Session</a>
+        <a href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
@@ -38,87 +46,97 @@
   <main id="main">
     <section class="hero section-shell" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <h1 id="hero-title">A quieter place to sort through what is going on.</h1>
-        <img class="divider-image" src="assets/divider-botanical-cropped.webp" alt="" aria-hidden="true" />
+        <h1 id="hero-title">A space just for you</h1>
+        <img class="divider-image" src="assets/icons/divider-botanical.webp" alt="" aria-hidden="true" width="360" height="120" />
         <p class="hero-text">The Listening Space is for people who need room to think out loud. No performance, no neat explanation and no pressure to have the right words.</p>
         <div class="button-row" aria-label="Primary actions">
-          <a class="button button-primary" href="#contact">Start with a message</a>
-          <a class="button button-secondary" href="#about-lynne">Meet Lynne</a>
+          <a class="button button-primary" href="contact.html">Start with a message</a>
+          <a class="button button-secondary" href="about.html">Meet Lynne</a>
         </div>
       </div>
 
       <figure class="hero-image">
-        <img src="assets/hero-chairs.webp" alt="Two sage green counselling chairs with a small table between them" />
+        <picture>
+          <source srcset="assets/images/hero-chairs-small.webp" media="(max-width: 640px)" />
+          <source srcset="assets/images/hero-chairs-medium.webp" media="(max-width: 1100px)" />
+          <img src="assets/images/hero-chairs-large.webp" alt="Two sage green counselling chairs with a small table between them" width="1400" height="1050" />
+        </picture>
       </figure>
     </section>
 
     <section class="cards section-shell" id="help" aria-label="Main website sections">
       <article class="info-card">
-        <div class="icon-circle"><img src="assets/icon-leaf-circle.webp" alt="" aria-hidden="true" /></div>
+        <div class="icon-circle"><img src="assets/icons/leaf-circle.webp" alt="" aria-hidden="true" width="76" height="76" /></div>
         <div>
           <h2>Not sure where to start?</h2>
           <p>You can begin with a muddle, a silence or one thing that keeps looping. It does not need to come out perfectly.</p>
-          <a class="text-link" href="#about-lynne">Meet Lynne <span aria-hidden="true">→</span></a>
+          <a class="text-link" href="about.html">Meet Lynne <span aria-hidden="true">→</span></a>
         </div>
       </article>
 
       <article class="info-card">
-        <div class="icon-circle"><img src="assets/icon-chair.webp" alt="" aria-hidden="true" /></div>
+        <div class="icon-circle"><img src="assets/icons/chair.webp" alt="" aria-hidden="true" width="76" height="76" /></div>
         <div>
           <h2>What the work feels like</h2>
           <p>Two chairs, steady attention and time to notice what usually gets rushed past.</p>
-          <a class="text-link" href="#contact">Start with a message <span aria-hidden="true">→</span></a>
+          <a class="text-link" href="what-it-is-like.html">Read more <span aria-hidden="true">→</span></a>
         </div>
       </article>
 
-      <article class="info-card" id="first-session">
-        <div class="icon-circle"><img src="assets/icon-calendar.webp" alt="" aria-hidden="true" /></div>
+      <article class="info-card">
+        <div class="icon-circle"><img src="assets/icons/calendar.webp" alt="" aria-hidden="true" width="76" height="76" /></div>
         <div>
           <h2>The first conversation</h2>
           <p>A simple first meeting to talk about what has brought you here, what you need and whether this feels like the right fit.</p>
-          <a class="text-link" href="#contact">Ask about a session <span aria-hidden="true">→</span></a>
+          <a class="text-link" href="first-session.html">What to expect <span aria-hidden="true">→</span></a>
         </div>
       </article>
     </section>
 
-
-    <section class="counsellor-section section-shell" id="about-lynne" aria-labelledby="lynne-title">
+    <section class="counsellor-section section-shell" aria-labelledby="lynne-title">
       <figure class="counsellor-photo">
-        <img src="assets/lynne-portrait.webp" alt="Lynne, counsellor at The Listening Space Counselling" />
+        <picture>
+          <source srcset="assets/photos/lynne-portrait-small.webp" media="(max-width: 640px)" />
+          <source srcset="assets/photos/lynne-portrait-medium.webp" media="(max-width: 1100px)" />
+          <img src="assets/photos/lynne-portrait-large.webp" alt="Lynne, counsellor at The Listening Space Counselling" width="800" height="1000" />
+        </picture>
       </figure>
 
       <div class="counsellor-copy">
         <p class="section-kicker">Meet your counsellor</p>
         <h2 id="lynne-title">Warm, steady and down to earth.</h2>
         <p>Lynne works in a gentle, grounded way. Sessions are not about being analysed, fixed or told what to do. They are about slowing things down enough to hear yourself more clearly.</p>
-        <a class="text-link" href="#contact">Send Lynne a message <span aria-hidden="true">→</span></a>
+        <a class="text-link" href="about.html">More about Lynne <span aria-hidden="true">→</span></a>
       </div>
     </section>
 
-    <section class="welcome-band" id="about" aria-labelledby="welcome-title">
+    <section class="welcome-band" aria-labelledby="welcome-title">
       <div class="plant-wrap" aria-hidden="true">
-        <img src="assets/plant-illustration.webp" alt="" class="plant-art" />
+        <img src="assets/icons/plant.webp" alt="" class="plant-art" width="125" height="166" />
       </div>
 
       <div class="welcome-copy">
-        <img src="assets/icon-leaf-triad.webp" alt="" aria-hidden="true" class="section-badge" />
+        <img src="assets/icons/leaf-triad.webp" alt="" aria-hidden="true" class="section-badge" width="66" height="66" />
         <h2 id="welcome-title">Two chairs. Time to think. No performance needed.</h2>
-        <img class="divider-image compact" src="assets/divider-botanical-cropped.webp" alt="" aria-hidden="true" />
+        <img class="divider-image compact" src="assets/icons/divider-botanical.webp" alt="" aria-hidden="true" width="260" height="86" />
         <p>You do not need a polished story before getting in touch. A few honest lines about what is happening is enough.</p>
       </div>
 
       <div class="contact-prompt" id="contact">
-        <img src="assets/icon-leaf-triad.webp" alt="" aria-hidden="true" class="contact-badge" />
+        <img src="assets/icons/leaf-triad.webp" alt="" aria-hidden="true" class="contact-badge" width="54" height="54" />
         <p class="prompt-title">Start simply.</p>
         <p>Send a short message when you are ready.</p>
-        <a class="button button-primary" href="#contact">Message Lynne</a>
+        <a class="button button-primary" href="contact.html">Message Lynne</a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <p>© The Listening Space Counselling</p>
-    <p>Website content can be updated as Lynne's practice details are confirmed.</p>
+    <nav aria-label="Footer navigation">
+      <a href="privacy.html">Privacy</a>
+      <a href="accessibility.html">Accessibility</a>
+    </nav>
   </footer>
 
   <script src="js/main.js"></script>

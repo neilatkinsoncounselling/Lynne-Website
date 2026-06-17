@@ -1,4 +1,3 @@
-
 const menuToggle = document.querySelector('.menu-toggle');
 const mainNav = document.querySelector('.main-nav');
 
@@ -13,5 +12,12 @@ if (menuToggle && mainNav) {
       mainNav.classList.remove('open');
       menuToggle.setAttribute('aria-expanded', 'false');
     });
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      mainNav.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
   });
 }
