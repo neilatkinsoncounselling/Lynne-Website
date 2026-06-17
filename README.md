@@ -52,3 +52,9 @@ Update v20:
 - Prevented that short hero heading from wrapping awkwardly on desktop.
 - Centred the hero separator within the hero text column.
 - Reduced the hero separator slightly so it looks closer to the previous neater treatment.
+
+Update v21:
+- Replaced three page headings with shorter, simpler wording:
+  - Two chairs. Time to think.
+  - A first conversation, nothing more.
+  - A short message is enough.
