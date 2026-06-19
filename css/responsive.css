@@ -242,3 +242,22 @@
     margin-right: auto;
   }
 }
+
+/* Hero text and divider alignment refinement v21 */
+.hero-copy {
+  text-align: center;
+}
+
+.hero-copy h1 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-text {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-copy .button-row {
+  justify-content: center;
+}

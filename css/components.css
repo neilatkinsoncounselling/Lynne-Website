@@ -100,6 +100,10 @@
   color: var(--muted);
 }
 
+.copy-panel p.button-lead-in {
+  margin-bottom: 1.5rem;
+}
+
 
 /* Divider refinement v19 */
 .divider-image {
