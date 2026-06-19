@@ -1,0 +1,142 @@
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.9rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 190px;
+  min-height: 54px;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button:hover,
+.button:focus-visible { transform: translateY(-2px); }
+
+.button-primary {
+  background: var(--sage);
+  color: #fff;
+  box-shadow: 0 12px 28px rgba(103, 114, 95, 0.22);
+}
+
+.button-primary:hover,
+.button-primary:focus-visible { background: var(--sage-deep); }
+
+.button-secondary {
+  border: 1px solid rgba(103, 114, 95, 0.55);
+  background: rgba(255,255,255,0.45);
+  color: var(--sage-deep);
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: var(--sage-deep);
+  font-weight: 500;
+}
+
+.text-link:hover,
+.text-link:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.divider-image {
+  width: min(360px, 70%);
+  margin: 1.1rem 0 0;
+  opacity: 0.9;
+}
+
+.divider-image.compact {
+  width: min(260px, 52vw);
+  margin: 0.95rem auto 0;
+}
+
+.icon-circle {
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: rgba(230, 224, 214, 0.55);
+}
+
+.icon-circle img {
+  width: 76px;
+  height: 76px;
+  object-fit: contain;
+}
+
+.section-kicker {
+  margin: 0 0 0.85rem;
+  color: var(--sage-deep);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.copy-panel,
+.content-card,
+.notice-card {
+  padding: clamp(1.35rem, 2vw, 1.9rem);
+  background: rgba(255, 252, 248, 0.72);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+}
+
+.copy-panel p,
+.content-card p,
+.notice-card p {
+  margin-top: 0.8rem;
+  color: var(--muted);
+}
+
+
+/* Divider refinement v19 */
+.divider-image {
+  width: min(260px, 48%);
+  max-height: 46px;
+  object-fit: contain;
+  object-position: center;
+  margin-top: 0.95rem;
+}
+
+.hero .divider-image {
+  width: min(245px, 46%);
+  max-height: 42px;
+}
+
+.divider-image.compact {
+  width: min(220px, 46vw);
+  max-height: 38px;
+  object-fit: contain;
+  margin-top: 0.8rem;
+}
+
+
+/* Hero heading and divider refinement v20 */
+.hero-copy {
+  max-width: 520px;
+}
+
+.hero-copy h1 {
+  max-width: none;
+}
+
+.hero .divider-image {
+  display: block;
+  width: min(220px, 52%);
+  max-height: 36px;
+  object-fit: contain;
+  object-position: center;
+  margin: 0.95rem auto 0;
+}

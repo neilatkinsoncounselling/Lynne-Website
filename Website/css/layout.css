@@ -1,0 +1,96 @@
+.site-header {
+  padding: 1.2rem clamp(1rem, 4vw, 4rem) 0.6rem;
+  background: var(--cream);
+}
+
+.header-inner {
+  width: min(1240px, 100%);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.brand { display: inline-flex; align-items: center; }
+
+.brand img {
+  width: clamp(260px, 27vw, 420px);
+  height: auto;
+  background: var(--cream);
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.2rem, 2.4vw, 2.6rem);
+  white-space: nowrap;
+}
+
+.main-nav a {
+  position: relative;
+  padding: 0.5rem 0;
+  font-size: 0.98rem;
+}
+
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: 0.12rem;
+  height: 2px;
+  background: var(--sage);
+  transition: right 0.25s ease;
+}
+
+.main-nav a:hover::after,
+.main-nav a:focus-visible::after,
+.main-nav a.active::after { right: 0; }
+
+.menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.5);
+  padding: 0;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  margin: 4px auto;
+  background: var(--ink);
+}
+
+.section-shell {
+  width: min(1240px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem clamp(1rem, 5vw, 4rem);
+  background: var(--cream);
+  color: var(--muted);
+  font-size: 0.86rem;
+  border-top: 1px solid var(--line);
+}
+
+.site-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.8rem;
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
