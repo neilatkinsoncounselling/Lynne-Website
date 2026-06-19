@@ -23,14 +23,14 @@
 .main-nav {
   display: flex;
   align-items: center;
-  gap: clamp(1.2rem, 2.4vw, 2.6rem);
+  gap: clamp(0.8rem, 1.6vw, 1.55rem);
   white-space: nowrap;
 }
 
 .main-nav a {
   position: relative;
   padding: 0.5rem 0;
-  font-size: 0.98rem;
+  font-size: 0.94rem;
 }
 
 .main-nav a::after {

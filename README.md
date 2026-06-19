@@ -65,3 +65,9 @@ Update v22:
 - Removed "polished story" and used simpler wording around not needing to know where to begin.
 - Simplified the homepage, About, What It Is Like, First Session and Contact page copy.
 - Marked Privacy and Accessibility pages as draft structural pages.
+
+Update v23:
+- Added local WOFF2 fonts in `assets/fonts`.
+- Added local `@font-face` rules to `css/base.css`.
+- Removed Google Fonts preconnect and stylesheet links from all HTML pages.
+- The site now loads DM Sans and Spectral locally.
