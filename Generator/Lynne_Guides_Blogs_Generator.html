@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guide and Blog Generator | The Listening Space Counselling</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+  <style>
+    .generator-shell {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: clamp(1.2rem, 3vw, 2.4rem);
+    }
+
+    .generator-grid {
+      display: grid;
+      grid-template-columns: minmax(300px, 0.95fr) minmax(320px, 1.05fr);
+      gap: clamp(1rem, 2.5vw, 2rem);
+      align-items: start;
+    }
+
+    .generator-panel {
+      background: rgba(255, 252, 248, 0.9);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--card-shadow);
+      padding: clamp(1rem, 2vw, 1.5rem);
+    }
+
+    .generator-panel label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .generator-panel input,
+    .generator-panel select,
+    .generator-panel textarea {
+      width: 100%;
+      margin-top: 0.4rem;
+      padding: 0.72rem 0.78rem;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+    }
+
+    .generator-panel textarea {
+      min-height: 170px;
+      resize: vertical;
+    }
+
+    .helper-text {
+      margin-top: 0.35rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+
+    .generator-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.2rem;
+    }
+
+    .generator-output {
+      min-height: 260px;
+      white-space: pre-wrap;
+      overflow: auto;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1rem;
+      font-family: Consolas, Monaco, monospace;
+      font-size: 0.9rem;
+      color: #2f2a26;
+    }
+
+    .output-tabs {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin: 1rem 0;
+    }
+
+    .tab-button {
+      border: 1px solid var(--line);
+      background: rgba(255, 252, 248, 0.9);
+      border-radius: 999px;
+      padding: 0.45rem 0.8rem;
+      cursor: pointer;
+      font: inherit;
+      color: var(--ink);
+    }
+
+    .tab-button.active {
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .path-note {
+      margin: 0.5rem 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 860px) {
+      .generator-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <main id="main" class="generator-shell">
+    <section class="page-hero">
+      <p class="section-kicker">Generator</p>
+      <h1>Guide and blog page generator.</h1>
+      <p>A simple offline tool for creating new guide and blog pages for The Listening Space Counselling.</p>
+    </section>
+
+    <section class="generator-grid" aria-label="Generator form and output">
+      <div class="generator-panel">
+        <h2>Page details</h2>
+
+        <label for="pageType">Page type</label>
+        <select id="pageType">
+          <option value="guide">Guide</option>
+          <option value="blog">Blog</option>
+        </select>
+
+        <label for="title">Title</label>
+        <input id="title" type="text" value="[New guide title]" />
+
+        <label for="slug">File name</label>
+        <input id="slug" type="text" value="new-guide" />
+        <p class="helper-text">Use lower case words with hyphens, for example anxiety-before-a-first-session. The generator adds .html automatically.</p>
+
+        <label for="intro">Short introduction</label>
+        <textarea id="intro">[Introductory text placeholder.]</textarea>
+
+        <label for="summary">Card summary</label>
+        <textarea id="summary">[Short summary placeholder for the Guides or Blog page.]</textarea>
+
+        <label for="content">Main page text</label>
+        <textarea id="content">[Main content placeholder.]</textarea>
+        <p class="helper-text">Leave blank if you only want a placeholder page. Blank lines create separate paragraphs. Lines starting with ## become section headings.</p>
+
+        <div class="generator-actions">
+          <button class="button button-primary" type="button" id="generateBtn">Generate</button>
+          <button class="button button-secondary" type="button" id="downloadBtn">Download page</button>
+          <button class="button button-secondary" type="button" id="copyPageBtn">Copy HTML</button>
+          <button class="button button-secondary" type="button" id="copyCardBtn">Copy card</button>
+        </div>
+      </div>
+
+      <div class="generator-panel">
+        <h2>Output</h2>
+        <p class="path-note" id="pathNote">Save page as: guides/new-guide.html</p>
+        <p class="path-note" id="statusBox" aria-live="polite">Ready.</p>
+        <div class="output-tabs" aria-label="Output tabs">
+          <button class="tab-button active" type="button" data-output="page">Full page HTML</button>
+          <button class="tab-button" type="button" data-output="card">Card for listing page</button>
+          <button class="tab-button" type="button" data-output="notes">Where to put it</button>
+        </div>
+        <pre class="generator-output" id="outputBox"></pre>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const pageType = document.getElementById('pageType');
+    const title = document.getElementById('title');
+    const slug = document.getElementById('slug');
+    const intro = document.getElementById('intro');
+    const summary = document.getElementById('summary');
+    const content = document.getElementById('content');
+    const outputBox = document.getElementById('outputBox');
+    const pathNote = document.getElementById('pathNote');
+    const statusBox = document.getElementById('statusBox');
+    const generateBtn = document.getElementById('generateBtn');
+    const downloadBtn = document.getElementById('downloadBtn');
+    const copyPageBtn = document.getElementById('copyPageBtn');
+    const copyCardBtn = document.getElementById('copyCardBtn');
+    let currentOutput = 'page';
+    let generated = { page: '', card: '', notes: '' };
+
+    function escapeHtml(value) {
+      return String(value || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function makeSlug(value) {
+      return String(value || '')
+        .toLowerCase()
+        .replace(/&/g, ' and ')
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '') || 'new-page';
+    }
+
+    function bodyHtml(text) {
+      const raw = String(text || '').trim();
+      if (!raw) return '      <p>[Main content placeholder.]</p>';
+      const blocks = raw.split(/\n\s*\n/).map(block => block.trim()).filter(Boolean);
+      return blocks.map(block => {
+        if (block.startsWith('## ')) {
+          return '      <h2>' + escapeHtml(block.slice(3).trim()) + '</h2>';
+        }
+        return '      <p>' + escapeHtml(block).replace(/\n/g, '<br />') + '</p>';
+      }).join('\n');
+    }
+
+    function buildNav(activeType) {
+      const blogActive = activeType === 'blog' ? ' class="active"' : '';
+      const guideActive = activeType === 'guide' ? ' class="active"' : '';
+      return `      <nav class="main-nav" id="main-navigation" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="../about.html">About</a>
+        <a href="../first-session.html">First Session</a>
+        <a href="../what-it-is-like.html">What It Is Like</a>
+        <a href="../what-i-can-help-with.html">Help With</a>
+        <a${guideActive} href="../guides.html">Guides</a>
+        <a${blogActive} href="../blog.html">Blog</a>
+        <a href="../contact.html">Contact</a>
+      </nav>`;
+    }
+
+    function generate() {
+      const type = pageType.value;
+      const pageTitle = title.value.trim() || (type === 'guide' ? '[Guide title]' : '[Blog post title]');
+      const cleanSlug = makeSlug(slug.value || pageTitle);
+      slug.value = cleanSlug;
+      const folder = type === 'guide' ? 'guides' : 'blog';
+      const label = type === 'guide' ? 'Guide' : 'Blog';
+      const listPage = type === 'guide' ? 'guides.html' : 'blog.html';
+      const linkText = type === 'guide' ? 'Open guide' : 'Read post';
+      const safeTitle = escapeHtml(pageTitle);
+      const safeIntro = escapeHtml(intro.value.trim() || '[Introductory text placeholder.]');
+      const safeSummary = escapeHtml(summary.value.trim() || '[Short summary placeholder.]');
+      const metaDescription = escapeHtml((summary.value.trim() || intro.value.trim() || 'Page for The Listening Space Counselling.').slice(0, 155));
+      const filePath = `${folder}/${cleanSlug}.html`;
+
+      generated.page = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>${safeTitle} | The Listening Space Counselling</title>
+  <meta name="description" content="${metaDescription}" />
+  <meta property="og:title" content="${safeTitle} | The Listening Space Counselling" />
+  <meta property="og:description" content="${metaDescription}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="../assets/images/hero-chairs-large.webp" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" aria-label="Main header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html" aria-label="The Listening Space Counselling home">
+        <img src="../assets/logo/listening-space-logo.webp" alt="The Listening Space Counselling logo" width="420" height="300" />
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+${buildNav(type)}
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero section-shell">
+      <p class="section-kicker">${label}</p>
+      <h1>${safeTitle}</h1>
+      <p>${safeIntro}</p>
+    </section>
+
+    <section class="copy-panel section-shell">
+${bodyHtml(content.value)}
+      <p><a class="text-link" href="../${listPage}">Back to ${type === 'guide' ? 'guides' : 'blog'} <span aria-hidden="true">→</span></a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© The Listening Space Counselling</p>
+    <nav aria-label="Footer navigation">
+      <a href="../privacy.html">Privacy</a>
+      <a href="../accessibility.html">Accessibility</a>
+    </nav>
+  </footer>
+
+  <script src="../js/main.js"><\/script>
+</body>
+</html>`;
+
+      generated.card = `<article class="content-card">
+  <h2>${safeTitle}</h2>
+  <p>${safeSummary}</p>
+  <a class="text-link" href="${filePath}">${linkText} <span aria-hidden="true">→</span></a>
+</article>`;
+
+      generated.notes = `1. Save the generated page as:\n\n   ${filePath}\n\n2. Copy the card snippet into:\n\n   ${type === 'guide' ? 'guides.html' : 'blog.html'}\n\n3. Paste it inside the content grid section, alongside the other cards.\n\n4. Commit both files to GitHub. GitHub Pages will then publish the new page.`;
+      pathNote.textContent = `Save page as: ${filePath}`;
+      outputBox.textContent = generated[currentOutput];
+    }
+
+    function downloadPage() {
+      generate();
+      const fileName = makeSlug(slug.value || title.value) + '.html';
+      const blob = new Blob([generated.page], { type: 'text/html' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = fileName;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+      setStatus('Page downloaded as ' + fileName + '.');
+    }
+
+    function setStatus(message) {
+      statusBox.textContent = message;
+    }
+
+    async function copyText(which) {
+      generate();
+      const text = generated[which] || '';
+
+      if (navigator.clipboard && window.isSecureContext) {
+        try {
+          await navigator.clipboard.writeText(text);
+          setStatus(which === 'page' ? 'Full page HTML copied.' : 'Card snippet copied.');
+          return;
+        } catch (error) {
+          // Fall through to the older copy method below.
+        }
+      }
+
+      const temporaryBox = document.createElement('textarea');
+      temporaryBox.value = text;
+      temporaryBox.setAttribute('readonly', '');
+      temporaryBox.style.position = 'fixed';
+      temporaryBox.style.left = '-9999px';
+      document.body.appendChild(temporaryBox);
+      temporaryBox.select();
+
+      let copied = false;
+      try {
+        copied = document.execCommand('copy');
+      } catch (error) {
+        copied = false;
+      }
+
+      document.body.removeChild(temporaryBox);
+
+      if (copied) {
+        setStatus(which === 'page' ? 'Full page HTML copied.' : 'Card snippet copied.');
+      } else {
+        outputBox.textContent = text;
+        outputBox.focus();
+        setStatus('Copy was blocked by the browser. The text is shown above so you can select and copy it manually.');
+      }
+    }
+
+    document.querySelectorAll('.tab-button').forEach(button => {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+        button.classList.add('active');
+        currentOutput = button.dataset.output;
+        generate();
+      });
+    });
+
+    pageType.addEventListener('change', () => {
+      if (pageType.value === 'guide') {
+        if (!title.value || title.value === '[New blog title]') title.value = '[New guide title]';
+        if (!slug.value || slug.value === 'new-blog') slug.value = 'new-guide';
+      } else {
+        if (!title.value || title.value === '[New guide title]') title.value = '[New blog title]';
+        if (!slug.value || slug.value === 'new-guide') slug.value = 'new-blog';
+      }
+      generate();
+    });
+
+    title.addEventListener('input', () => {
+      if (!slug.dataset.edited) slug.value = makeSlug(title.value);
+      generate();
+    });
+    slug.addEventListener('input', () => { slug.dataset.edited = 'true'; generate(); });
+    intro.addEventListener('input', generate);
+    summary.addEventListener('input', generate);
+    content.addEventListener('input', generate);
+    generateBtn.addEventListener('click', generate);
+    downloadBtn.addEventListener('click', downloadPage);
+    copyPageBtn.addEventListener('click', () => copyText('page'));
+    copyCardBtn.addEventListener('click', () => copyText('card'));
+
+    generate();
+  </script>
+</body>
+</html>

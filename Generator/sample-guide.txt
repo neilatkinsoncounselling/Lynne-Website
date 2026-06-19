@@ -1,0 +1,11 @@
+Title: [Guide title placeholder]
+File name: guide-title-placeholder
+Short intro: [Introductory text placeholder.]
+Card summary: [Short guide summary placeholder.]
+
+Main text:
+[Main content placeholder.]
+
+## [Section heading placeholder]
+
+[More guide content placeholder.]

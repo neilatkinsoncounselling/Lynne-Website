@@ -1,0 +1,11 @@
+Title: [Blog post title placeholder]
+File name: blog-post-title-placeholder
+Short intro: [Introductory text placeholder.]
+Card summary: [Short blog summary placeholder.]
+
+Main text:
+[Main blog content placeholder.]
+
+## [Section heading placeholder]
+
+[More blog content placeholder.]
